@@ -1,0 +1,31 @@
+<form [formGroup]="mainForm">
+    <table>
+        <tr>
+            <td>Date</td>
+            <td><input type="datetime-local" name="date" id="date" formControlName="date"></td>
+        </tr>
+        <tr>
+            <td>Amount</td>
+            <td><input type="text" placeholder="$0.00" formControlName="amount"></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                <select name="category" id="category" formControlName="category">
+                    <option value="food">Food</option>
+                    <option value="transport">Transport</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="others">Others</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input type="text" formControlName="description"></td>
+        </tr>
+        <tr>
+            <button (click)="saveInput()" [disabled]="mainForm.invalid">Save</button>
+        </tr>
+    </table>
+</form>
